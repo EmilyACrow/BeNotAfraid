@@ -1,0 +1,26 @@
+[gd_scene load_steps=3 format=3 uid="uid://ej6yihge3g2f"]
+
+[ext_resource type="Script" path="res://scenes/Eye.cs" id="1_q72ay"]
+
+[sub_resource type="SphereMesh" id="SphereMesh_3wym2"]
+
+[node name="Eye" type="Node3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.457588, 0)
+script = ExtResource("1_q72ay")
+
+[node name="Viewport" type="SubViewport" parent="."]
+
+[node name="Camera" type="Camera3D" parent="Viewport"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.4616, 0)
+current = true
+
+[node name="SpotLight3D" type="SpotLight3D" parent="Viewport/Camera"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.0619318, 0.129588)
+light_color = Color(0.954428, 0.80025, 0.573639, 1)
+spot_range = 7.79198
+spot_angle = 53.2604
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+transform = Transform3D(0.25, 0, 0, 0, 0.25, 0, 0, 0, 0.25, 0, 0, 0)
+mesh = SubResource("SphereMesh_3wym2")
+skeleton = NodePath("")
