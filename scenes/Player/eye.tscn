@@ -1,12 +1,12 @@
 [gd_scene load_steps=3 format=3 uid="uid://ej6yihge3g2f"]
 
-[ext_resource type="Script" path="res://scenes/Eye.cs" id="1_q72ay"]
+[ext_resource type="Script" path="res://scripts/Player/Eye.cs" id="1_1yxxx"]
 
 [sub_resource type="SphereMesh" id="SphereMesh_3wym2"]
 
 [node name="Eye" type="Node3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.457588, 0)
-script = ExtResource("1_q72ay")
+script = ExtResource("1_1yxxx")
 
 [node name="Viewport" type="SubViewport" parent="."]
 

@@ -1,0 +1,55 @@
+[gd_scene load_steps=3 format=3 uid="uid://byst83jbgj087"]
+
+[ext_resource type="FontFile" uid="uid://ckonj5bswojs2" path="res://fonts/OurGoldenAge-Regular.otf" id="1_3noh5"]
+
+[sub_resource type="Theme" id="Theme_18vsw"]
+default_font = ExtResource("1_3noh5")
+default_font_size = 36
+
+[node name="StartMenu" type="CanvasLayer"]
+
+[node name="Menu" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = SubResource("Theme_18vsw")
+
+[node name="MarginContainer" type="MarginContainer" parent="Menu"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 50
+theme_override_constants/margin_top = 40
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Menu/MarginContainer"]
+layout_mode = 2
+
+[node name="Title" type="Label" parent="Menu/MarginContainer/VBoxContainer"]
+layout_mode = 2
+text = "BE NOT AFRAID"
+
+[node name="MarginContainer" type="MarginContainer" parent="Menu/MarginContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_constants/margin_bottom = 30
+
+[node name="StartBtn" type="Button" parent="Menu/MarginContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 0
+theme_override_font_sizes/font_size = 30
+text = "Start"
+
+[node name="MarginContainer2" type="MarginContainer" parent="Menu/MarginContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_constants/margin_bottom = 10
+
+[node name="QuitBtn" type="Button" parent="Menu/MarginContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 0
+theme_override_font_sizes/font_size = 30
+text = "Quit"

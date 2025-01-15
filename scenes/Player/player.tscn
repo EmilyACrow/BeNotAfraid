@@ -1,8 +1,8 @@
 [gd_scene load_steps=8 format=3 uid="uid://c4vxfmnj31tq8"]
 
-[ext_resource type="Script" path="res://scripts/Player.cs" id="1_a2hr7"]
-[ext_resource type="Script" path="res://scripts/CameraController.cs" id="2_xdexo"]
-[ext_resource type="Shader" path="res://scripts/ThreeCam.gdshader" id="3_551hm"]
+[ext_resource type="Script" path="res://scripts/Player/Player.cs" id="1_tjh05"]
+[ext_resource type="Script" path="res://scripts/Player/CameraController.cs" id="2_t7d8k"]
+[ext_resource type="Shader" path="res://scripts/Player/ThreeCam.gdshader" id="3_e47hx"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_jwc57"]
 
@@ -12,7 +12,7 @@
 albedo_color = Color(1, 0.219608, 0.129412, 1)
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_i067o"]
-shader = ExtResource("3_551hm")
+shader = ExtResource("3_e47hx")
 shader_parameter/viewportSize = null
 shader_parameter/borderThickness = null
 shader_parameter/borderLineColor = null
@@ -24,8 +24,7 @@ shader_parameter/origin = null
 [node name="Player" type="CharacterBody3D"]
 collision_layer = 2
 collision_mask = 5
-motion_mode = 1
-script = ExtResource("1_a2hr7")
+script = ExtResource("1_tjh05")
 
 [node name="Body" type="CollisionShape3D" parent="."]
 shape = SubResource("CapsuleShape3D_jwc57")
@@ -37,11 +36,8 @@ mesh = SubResource("CapsuleMesh_bx4da")
 skeleton = NodePath("../../Body")
 surface_material_override/0 = SubResource("StandardMaterial3D_b251l")
 
-[node name="CameraAnchor" type="Node3D" parent="Pivot"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, 0)
-
 [node name="Cameras" type="Node3D" parent="."]
-script = ExtResource("2_xdexo")
+script = ExtResource("2_t7d8k")
 _lerpWeight = 0.05
 
 [node name="View" type="ColorRect" parent="Cameras"]

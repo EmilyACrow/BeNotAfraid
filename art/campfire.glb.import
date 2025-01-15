@@ -3,13 +3,13 @@
 importer="scene"
 importer_version=1
 type="PackedScene"
-uid="uid://cihqk6vofqofx"
-path="res://.godot/imported/tileset.glb-ea5038941e92fbe3382deaefde77257a.scn"
+uid="uid://bllw4d4dkib4a"
+path="res://.godot/imported/campfire.glb-7154e27795d564a48717bc75f9e28478.scn"
 
 [deps]
 
-source_file="res://art/tileset/tileset.glb"
-dest_files=["res://.godot/imported/tileset.glb-ea5038941e92fbe3382deaefde77257a.scn"]
+source_file="res://art/campfire.glb"
+dest_files=["res://.godot/imported/campfire.glb-7154e27795d564a48717bc75f9e28478.scn"]
 
 [params]
 

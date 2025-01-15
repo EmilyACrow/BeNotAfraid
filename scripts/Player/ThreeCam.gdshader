@@ -55,9 +55,9 @@ vec4 drawBorders(vec4 fragment, vec2 uv) {
 
 vec4 threeCamera(vec2 uv) {
     vec4 fragment;
-    vec3 view1 = texture(viewport1, pixelate(uv, 200.0)).rgb;
-    vec3 view2 = texture(viewport2, pixelate(uv, 100.0)).rgb;
-    vec3 view3 = texture(viewport3, pixelate(uv, 50.0)).rgb;
+    vec3 view1 = texture(viewport1, pixelate(uv, 150)).rgb;
+    vec3 view2 = texture(viewport2, pixelate(uv, 150)).rgb;
+    vec3 view3 = texture(viewport3, pixelate(uv, 150)).rgb;
 
     // Create an array of edge points, going clockwise starting in the top left corner, corner inclusive
     vec2 corners[7] = {vec2(0.0, 0.0), anchorA, vec2(1.0, 0.0), anchorB, vec2(1.0, 1.0), anchorC, vec2(0.0, 1.0)};
