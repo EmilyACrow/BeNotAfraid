@@ -1,8 +1,40 @@
-[gd_scene load_steps=2 format=3 uid="uid://bndctckhop3xb"]
+[gd_scene load_steps=8 format=3 uid="uid://bndctckhop3xb"]
 
 [ext_resource type="Script" path="res://scripts/Enemy/StateMachine.cs" id="1_8y7so"]
+[ext_resource type="Script" path="res://scripts/Enemy/Enemy.cs" id="1_tb1xl"]
+[ext_resource type="Script" path="res://scripts/Enemy/WanderState.cs" id="2_d7px4"]
+[ext_resource type="Script" path="res://scripts/Enemy/PursueState.cs" id="4_apbyj"]
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_yarib"]
+
+[sub_resource type="CapsuleMesh" id="CapsuleMesh_s828m"]
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_ep5i3"]
 
 [node name="Enemy" type="Node3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
+script = ExtResource("1_tb1xl")
 
 [node name="State Machine" type="Node" parent="."]
 script = ExtResource("1_8y7so")
+
+[node name="Wander" type="Node" parent="State Machine"]
+script = ExtResource("2_d7px4")
+
+[node name="Pursue" type="Node" parent="State Machine"]
+script = ExtResource("4_apbyj")
+
+[node name="Character" type="CharacterBody3D" parent="."]
+
+[node name="Collision" type="CollisionShape3D" parent="Character"]
+shape = SubResource("CapsuleShape3D_yarib")
+
+[node name="Mesh" type="MeshInstance3D" parent="Character/Collision"]
+mesh = SubResource("CapsuleMesh_s828m")
+
+[node name="Detector" type="Area3D" parent="Character"]
+collision_layer = 4
+collision_mask = 10
+
+[node name="DetectionRadius" type="CollisionShape3D" parent="Character/Detector"]
+shape = SubResource("SphereShape3D_ep5i3")

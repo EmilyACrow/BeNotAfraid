@@ -6,6 +6,7 @@ public partial class State : Node
 
 	[Signal]
 	public delegate void TransitionedEventHandler();
+	
 	public void Enter()
 	{
 		// Add your enter logic here

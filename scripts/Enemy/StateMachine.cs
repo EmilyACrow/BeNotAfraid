@@ -7,6 +7,7 @@ public partial class StateMachine : Node
 {
 	[Export]
 	public State initialState;
+	
 	private Dictionary<string, Node> _states;
 	private State _currentState;
 
